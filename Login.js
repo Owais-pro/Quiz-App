@@ -6,11 +6,11 @@ const UserPassword = document.querySelector('#upassword');
 
 Form.addEventListener('submit' , (event)=>{
     event.preventDefault();
-    const validation = User.filter((human)=>{
+    const validation = User.find((human)=>{
  return human.Email === UserEmail.value && human.Password === UserPassword.value;
     })
 
-    if(validation.length === 0){
+    if(!validation){
         alert("Enter Correct Email & Password...!")
         return;
     }
