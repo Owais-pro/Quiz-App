@@ -1,25 +1,28 @@
 const div = document.querySelector('div');
 let Index = 0;
 let questionArray = [];
+let marks = 0;
 const renderQuestion = (arr)=>{
     
     if(Index < arr.length) {
         div.innerHTML =`
-        <h3>${arr[Index].question.text}</h3>
-        <input type="checkbox" value ="1" onclick="handleCheckboxChange(this)">${arr[Index].correctAnswer}<br><br>
-        <input type="checkbox"  value ="2" onclick="handleCheckboxChange(this)">${arr[Index].incorrectAnswers[0]}<br><br>
-        <input type="checkbox"  value ="3" onclick="handleCheckboxChange(this)">${arr[Index].incorrectAnswers[1]}<br><br>
-        <input type="checkbox"  value ="4" onclick="handleCheckboxChange(this)">${arr[Index].incorrectAnswers[2]}<br><br>
+        <h3>Q${Index +1}: ${arr[Index].question.text}</h3>
+        <input type="checkbox" name ="answer" value ="1" onclick="handleCheckboxChange(this)">${arr[Index].correctAnswer}<br><br>
+        <input type="checkbox"  name ="answer" value ="2" onclick="handleCheckboxChange(this)">${arr[Index].incorrectAnswers[0]}<br><br>
+        <input type="checkbox"  name ="answer" value ="3" onclick="handleCheckboxChange(this)">${arr[Index].incorrectAnswers[1]}<br><br>
+        <input type="checkbox"  name ="answer" value ="4" onclick="handleCheckboxChange(this)">${arr[Index].incorrectAnswers[2]}<br><br>
         <button onclick="showNextQuestion()">Next</button>
 `
-    }
-    else {
-        div.innerHTML = "<h3>Quiz Completed!</h3>";
     }
 
 };
 
 const showNextQuestion = ()=>{
+    const selectAnswer = document.querySelector('input[name="answer"]:checked');
+    if( selectAnswer && selectAnswer.value === "1")
+        {
+            marks += 10;
+        }
     if( Index < questionArray.length - 1)
         {
             Index++;
@@ -27,7 +30,7 @@ const showNextQuestion = ()=>{
 
         }
         else {
-            div.innerHTML = "<h3>Quiz Completed!</h3>";
+            div.innerHTML = `<h3>Quiz Completed!</h3><h2>Your Score Is ${marks} out of ${questionArray.length * 10}</h2>`;
         }
 };
 
