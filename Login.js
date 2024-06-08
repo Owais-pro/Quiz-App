@@ -14,5 +14,5 @@ Form.addEventListener('submit' , (event)=>{
         alert("Enter Correct Email & Password...!")
         return;
     }
-    window.location = "Main.html"
+    window.location = "main.html"
 })
