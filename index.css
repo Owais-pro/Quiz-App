@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f8ff; /* Light azure color */
+    color: #333; /* Dark grey text color */
+    font-family: Arial, sans-serif;
+    align-items: center;
+    height: 100vh;
+}
+
+#main-div {
+    margin: auto;
+    width: 300px;
+    background-color: #ffffff; /* White color for form background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Light grey bottom border */
+    background-color: transparent;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.text-input:focus {
+    border-bottom-color: transparent;
+}
+
+.text-input::placeholder {
+    color: #aaa; /* Light grey placeholder color */
+    font-style: italic;
+}
+
+h1 {
+    color: rgb(26, 78, 161); /* Light blue color */
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgb(102, 172, 200); /* Light blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #5b9aaa;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #4a8a8a;
+    transform: scale(1);
+}
+
+
+
+
+
+

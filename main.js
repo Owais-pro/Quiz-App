@@ -54,9 +54,13 @@ const showNextQuestion = () => {
     Index++;
     renderQuestion(questionArray);
   } else {
-    div.innerHTML = `<h3>Quiz Completed!</h3><h2>Your Score Is ${marks} out of ${
-      questionArray.length * 10
-    }</h2>`;
+    div.innerHTML = `
+    <h3>Quiz Completed!</h3>
+        <h2>Your Score</h2>
+        <div class="score-circle">
+            <span class="marks">${marks}</span>
+            <span class="total">${questionArray.length * 10}</span>
+        </div>`;
   }
 };
 
